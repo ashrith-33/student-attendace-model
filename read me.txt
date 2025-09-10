@@ -1,0 +1,65 @@
+Person Detection System with Logging and Unknown Capture
+This project is a simple ML tool for real-time person detection. It uses facial recognition to identify people, log their entry, and capture pictures of unknown visitors.
+
+Key Features
+Person Recognition: Detects known people from a webcam, video, or image.
+
+Access Log: Keeps a log of when known people are detected.
+
+Unknown Capture: Saves pictures of anyone not in the system's database.
+
+Configurable: Easily switch between different camera inputs and adjust settings.
+
+Setup
+You need Python 3.6 or newer. Install the required libraries with this command:
+
+pip install face_recognition opencv-python numpy
+
+Note: On Windows, you might need to install Visual Studio Build Tools to get face_recognition working.
+
+Project Files
+Your project folder should look like this:
+
+project_folder/
+├── dataset/                
+│   ├── Ashrith/
+│   └── John_Doe/
+├── logs/                 
+├── unknown_captures/       
+├── trained_faces.pkl       
+├── train.py                
+└── detect.py               
+
+How to Use
+Step 1: Add Photos
+Create a dataset folder.
+
+Make a folder inside for each person you want to recognize (e.g., Ashrith).
+
+Put their photos in their respective folders.
+
+Step 2: Train the System
+This creates the trained_faces.pkl file from your photos.
+
+Open your terminal in the project folder.
+
+Run the training script:
+
+python train.py
+
+Step 3: Run Detection
+This runs the real-time detection based on your settings.
+
+Open detect.py in a text editor.
+
+In the "Configuration" section, uncomment the line for the input you want to use (webcam, image, or video). For images and videos, also set the file path.
+
+Save the file and run it from your terminal:
+
+python detect.py
+
+Tips:
+
+To Quit: Click the OpenCV window and press the 'q' key.
+
+For Speed: To make the video smoother, increase the FRAME_SKIP_INTERVAL in detect.py.
